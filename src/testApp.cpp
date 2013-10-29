@@ -42,7 +42,7 @@ void testApp::update(){
 void testApp::draw(){
     ofDisableLighting();
     // draw lines
-    ofSetColor(150,0,0);
+    ofSetColor(255,255,255);
     line1.draw();
     
     //ofSetColor(0,0,150);
