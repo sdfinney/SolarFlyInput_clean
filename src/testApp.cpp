@@ -75,8 +75,8 @@ void testApp::mouseMoved( int x, int y ){
 //--------------------------------------------------------------
 void testApp::addRange( ofPolyline & line, int value ){
     cout << "add "<< value << endl;
-    line.addVertex( line.size() * 5, value );
-    if ( line.size() > 100 ){
+    line.addVertex( line.size() * 5, (ofGetHeight()-value)/2.0f);
+    if ( line.size() > 100){
         vector<ofPoint> & verts = line.getVertices();
         // shift points over
         verts.erase(line.getVertices().begin());
