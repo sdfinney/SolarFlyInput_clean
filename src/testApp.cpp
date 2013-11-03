@@ -9,7 +9,7 @@ void testApp::setup(){
     string name = "Solar Input";
     string description = "It's an input!";
     spacebrew.addSubscribe("line1", "range" );
-    //spacebrew.addSubscribe("line2", "range" );
+    spacebrew.addSubscribe("line2", "range" );
     //spacebrew.addSubscribe("line3", "range" );
     //spacebrew.addSubscribe("box1", "range" );
     //spacebrew.addSubscribe("box2", "range" );
@@ -45,8 +45,8 @@ void testApp::draw(){
     ofSetColor(247,35,197);
     line1.draw();
     
-    //ofSetColor(0,0,150);
-    //line2.draw();
+    ofSetColor(0,0,150);
+    line2.draw();
     
     //ofSetColor(150,150,0);
     //line3.draw();
