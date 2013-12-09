@@ -33,6 +33,7 @@ void testApp::setup(){
 	glEnable(GL_DEPTH_TEST);
 }
 
+
 //--------------------------------------------------------------
 void testApp::update(){
     light.setPosition(lightPos);
