@@ -6,10 +6,10 @@ void testApp::setup(){
     ofBackground(0);
     
     string host = "sandbox.spacebrew.cc"; // change to localhost to test Spacebrew local server
-    string name = "of-example";
-    string description = "It's amazing";
+    string name = "Solar Input";
+    string description = "It's an input!";
     spacebrew.addSubscribe("line1", "range" );
-    //spacebrew.addSubscribe("line2", "range" );
+    spacebrew.addSubscribe("line2", "range" );
     //spacebrew.addSubscribe("line3", "range" );
     //spacebrew.addSubscribe("box1", "range" );
     //spacebrew.addSubscribe("box2", "range" );
@@ -26,7 +26,7 @@ void testApp::setup(){
     lightPos.set(ofGetWidth()/2.0f, ofGetHeight()/2.0f, 500);
     light.setPosition(lightPos);
     ofEnableLighting();
-    ofSetLineWidth(2.0f);
+    ofSetLineWidth(4.0f);
     
 	// this uses depth information for occlusion
 	// rather than always drawing things on top of each other
@@ -43,11 +43,11 @@ void testApp::update(){
 void testApp::draw(){
     ofDisableLighting();
     // draw lines
-    ofSetColor(150,0,0);
+    ofSetColor(247,35,197);
     line1.draw();
     
-    //ofSetColor(0,0,150);
-    //line2.draw();
+    ofSetColor(0,0,150);
+    line2.draw();
     
     //ofSetColor(150,150,0);
     //line3.draw();
@@ -76,8 +76,9 @@ void testApp::mouseMoved( int x, int y ){
 //--------------------------------------------------------------
 void testApp::addRange( ofPolyline & line, int value ){
     cout << "add "<< value << endl;
-    line.addVertex( line.size() * 5, (ofGetHeight()-value)/2.0f);
-    if ( line.size() > 100){
+    //ofMap(value, 0, 1024, 10, 300);
+    line.addVertex( line.size() * 5, (ofGetHeight()-ofMap(value,0,800,-200,2500)));
+    if ( line.size() > 250){
         vector<ofPoint> & verts = line.getVertices();
         // shift points over
         verts.erase(line.getVertices().begin());
